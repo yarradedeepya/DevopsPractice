@@ -1,18 +1,25 @@
 pipeline {
     agent any
-    
-    stages {
+options {
+    skipDefaultCheckout true
+  }
+   
+stages {
         stage('Checkout') {
             steps {
+                script{
                 echo 'Hello, Jenkins!'
                 git checkout scm
+                }
             }
         }
         
         stage('Build') {
             steps {
+                script{
                 // Your build commands go here
                 echo 'Building the project...,'
+                }
             }
         }
     }
